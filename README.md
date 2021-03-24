@@ -5,8 +5,8 @@ Terria Map
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/TerriaJS/TerriaMap.svg)](https://greenkeeper.io/)
 
-This is a complete website built using the TerriaJS library. See the [TerriaJS README](https://github.com/TerriaJS/TerriaJS) for information about TerriaJS, and getting started using this repository.
+こちらは、Plateau viewで実現した機能を含む、Terria Mapのパッケージです。Terria　Mapは、TerriaJSライブラリを用いたGISシステムとなります。TerriaJSの概要は、 [TerriaJS README](https://github.com/TerriaJS/TerriaJS) を参照ください。
 
 
 
-For instructions on how to deploy your map, see [the documentation here](doc/deploying/deploying-to-aws.md).
+本パッケージの使い方は、「実証環境構築マニュアル」とともに、 [こちら](doc/deploying/deploying-to-aws.md)の文書を参照ください。
