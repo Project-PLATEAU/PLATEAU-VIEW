@@ -9,4 +9,4 @@ Terria Map
 
 
 
-本パッケージの使い方は、「実証環境構築マニュアル」とともに、 [こちら](doc/deploying/deploying-to-aws.md)の文書を参照ください。
+本パッケージの使い方は、「実証環境構築マニュアル」および [こちら](doc/deploying/deploying-to-aws.md)の文書を参照ください。
