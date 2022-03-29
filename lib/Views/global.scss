@@ -4,15 +4,278 @@
 body {
   margin: 0;
   overflow: hidden;
+  background: #ffffff !important;
 }
 
 :global {
+  *:focus {
+    outline: none !important;
+  }
+  *:focus-visible {
+    outline: 3px solid #463c64 !important; // plateau ロゴの色
+  }
   @media print {
     .nationalmap-print-disclaimer {
       color: #000;
       display: block;
     }
   }
+
+  .tm-branding__branding img {
+    background: white;
+    padding: 5px 10px;
+    height: 52px;
+    box-sizing: border-box;
+  }
+
+  .tjs-standard-user-interface__ui {
+    background: #ffffff !important;
+  }
+
+  .tjs-workbench-list__workbench-content {
+    padding: 0;
+    flex: 1;
+  }
+
+  .tjs-workbench-item__workbench-item {
+    color: #000000 !important;
+    background: #ffffff !important;
+    filter: drop-shadow(0 5px 5px gray);
+  }
+
+  .tjs-datetime-selector-section__datetimeAndPicker {
+    & .tjs-datetime-selector-section__datetimePrevious,
+    .tjs-datetime-selector-section__datetimeNext {
+      background: $color-primary !important;
+      border-radius: 2px;
+    }
+  }
+
+  .tjs-datetime-selector-section__timeline-button {
+    border: 1px solid;
+    border-color: $color-primary !important;
+    background-color: rgba(0, 190, 190, 0.4);
+    &.undefined {
+      & > svg {
+        fill: #fff;
+      }
+      border-color: transparent !important;
+    }
+  }
+
+  .tjs-viewing-controls__btn {
+    color: #939393 !important;
+    background: #ffffff !important;
+  }
+
+  .tjs-_buttons__btn--map {
+    color: $text-light !important;
+    background: $color-primary !important;
+  }
+
+  .tjs-_buttons__btn--map svg {
+    fill: #ffffff !important;
+  }
+
+  .tjs-workbench-item__toggleColumn svg
+//   .tjs-workbench-item__btn-toggle svg
+ {
+    fill: #000000 !important;
+  }
+
+  .rc-slider-track {
+    background-color: $color-primary !important;
+  }
+
+  .rc-slider-handle {
+    background-color: $color-primary !important;
+  }
+
+  .tjs-feature-info-download__dropdown__button {
+    display: none;
+  }
+
+  .tjs-badge-bar__header {
+    color: #000000;
+    text-transform: unset;
+    padding: 15px 20px;
+
+    li {
+      width: 50%;
+
+      &:nth-of-type(1) {
+        text-align: left;
+        button {
+          margin-left: 0;
+          color: $color-primary;
+          font-size: 0.8125rem;
+        }
+      }
+
+      &:nth-of-type(2) {
+        text-align: right;
+        color: #000000;
+        // text-transform: lowercase;
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .tjs-workbench__remove-button svg {
+    fill: $color-primary;
+    height: 16px !important;
+    width: 16px !important;
+    margin: 0 !important;
+    vertical-align: text-bottom;
+    padding-bottom: 4px;
+  }
+
+  .tjs-panel__inner {
+    background: #fff !important;
+    color: #000;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    & .tjs-panel__caret {
+      background: #fff;
+    }
+    & .tjs-panel__sub-heading {
+      line-height: 1.4;
+    }
+    & .tjs-_buttons__btn-grey {
+      border: none;
+      border-radius: 20px;
+      line-height: 26px;
+      color: #444444;
+      background-color: #ededed;
+    }
+    & .tjs-_buttons__btn svg {
+      fill: $color-primary;
+    }
+    & .tjs-setting-panel__is-active {
+      background-color: $color-primary;
+      color: #fff;
+    }
+    & .tjs-share-panel__explanation {
+      color: #000;
+    }
+    & .tjs-share-panel__shareUrlfield {
+      background-color: rgba(0, 0, 0, 0.125) !important;
+      color: #595b60;
+    }
+  }
+
+  .tjs-feature-info-panel__panel {
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    color: #000;
+    & .tjs-feature-info-panel__header {
+      background: none;
+    }
+    & .tjs-feature-info-panel__header svg {
+      fill: #000;
+    }
+    & .tjs-feature-info-panel__btn--close-feature svg {
+      fill: $color-primary;
+    }
+    & .tjs-feature-info-panel__location {
+      color: #939393;
+    }
+    & .tjs-feature-info-panel__btnPanelHeading {
+      color: #444444;
+    }
+    & .tjs-feature-info-section__section {
+      border: none;
+    }
+    & .tjs-feature-info-section__content {
+      padding: 0;
+      & th {
+        min-width: 33%; // 見出し列の幅が小さくなりすぎないようにする
+      }
+      & td,
+      th {
+        border: none;
+        // border-bottom: 1px solid #939393;
+        padding: 10px 10px;
+        font-weight: normal;
+      }
+      & tr:nth-child(2n) {
+        background: #ededed;
+      }
+    }
+    & .tjs-feature-info-section__raw-data-button {
+      display: none;
+    }
+    & .tjs-feature-info-section__title {
+      background-color: $color-primary;
+    }
+  }
+
+  .tjs-story-editor__field {
+    flex: 1;
+  }
+
+  .cesium-widget-credits,
+  .leaflet-bottom {
+    display: none !important;
+  }
+
+  .layer-opacity-section {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.625rem;
+    float: none;
+    div {
+      display: flex;
+      label {
+        flex-basis: 100px;
+        margin-right: 5px;
+        float: left;
+        width: 80px;
+      }
+    }
+  }
+
+  // workbench item's color range slider.
+  .workbenchitem-color-range-slider-minmax-label {
+    width: 100%;
+    display: flex;
+    div {
+      width: 50%;
+    }
+    div:first-child {
+      text-align: left;
+    }
+    div:last-child {
+      text-align: right;
+    }
+  }
+
+  .geospatial-jp-link-container {
+    margin-top: 30px;
+  }
+
+  // .tjs-badge-bar__header li:nth-of-type(1){
+  //   text-align: left;
+  //   background-color: red;
+  //   button{
+  //     color: blue;
+  //     margin-left: 0;
+  //   }
+  // }
+  // .tjs-badge-bar__header li:nth-of-type(1) button{
+  //   color:#000000;
+  //   margin-left: 0;
+  // }
+  // .tjs-badge-bar__header li:nth-of-type(2){
+  //   text-align: right;
+  //   color:#000000;
+  //   background-color: blue;
+  // }
+
+  // .tjs-badge-bar__header li:nth-of-type(2) span{
+  //   font-size: 16px;
+  // }
 
   // To customise the look of your Terria Map, uncomment this section and make changes to your heart's content
   // You will also want to uncomment and change values in lib/Styles/variables.scss
@@ -61,11 +324,11 @@ body {
 
     // All kinds of buttons in various screens
     .tjs-_buttons__btn {
-        &-primary { 
-            font-family: $font-base; 
+        &-primary {
+            font-family: $font-base;
         }
-        &:hover { 
-            color: $color-primary;             
+        &:hover {
+            color: $color-primary;
         }
     }
 
@@ -77,11 +340,11 @@ body {
 
     // Lat/lon buttons
     .tjs-legend__locationBar, .tjs-legend__distanceLegend {
-        
+
         background:$dark;
         color:white;
         &:hover,&:focus { background: $dark; color: white; }
-    
+
     }
 
     // Progress bar while datasets are loading
@@ -96,7 +359,7 @@ body {
     }
 
     .tjs-timeline__text-cell {
-        font-family: $font-base; 
+        font-family: $font-base;
     }
 
     .tjs-timeline__timeline {
@@ -140,15 +403,15 @@ body {
     .tjs-data-catalog-item__btn-catalog-item--is-previewed {
         ,&:focus {color: $color-primary; }
     }
-      // The tabs at the top 
-    .tjs-tabs__btn--tab {    
+      // The tabs at the top
+    .tjs-tabs__btn--tab {
         font-family:$font-base
     }
 
     .tjs-tabs__btn--selected {
         color:$color-primary-dark;
     }
-    .tjs-tabs__btn--tab:hover {    
+    .tjs-tabs__btn--tab:hover {
         color:$color-secondary;
     }
     */

@@ -1,0 +1,440 @@
+{
+  "general": {
+    "close": "閉じる",
+    "open": "開く",
+    "prev": "前",
+    "next": "次",
+    "skip": "飛ばす",
+    "back": "戻る",
+    "delete": "削除",
+    "cancel": "キャンセル",
+    "confirm": "確認"
+  },
+  "measure": {
+    "measureTool": "計測ツール",
+    "measureToolTitle": "距離の計測",
+    "measureDistance": "距離を計測します"
+  },
+  "addData": {
+    "addDataBtnText": "Add data",
+    "myData": "My Data",
+    "dataCatalogue": "Data Catalogue"
+  },
+  "feedback": {
+    "shareWithDevelopers": "マップビューを添付する"
+  },  
+  "location": {
+    "errorGettingLocation": "位置を取得する際にエラー発生",
+    "browserCannotProvide": "ブラウザが位置情報を提供できません",
+    "myLocation": "自位置",
+    "location": "位置",
+    "originError": "HTTPSを利用している際は、ブラウザが位置情報を提供できません。代わりに {{secureUrl}} が利用できるかもしれません。",
+    "centreMap": "自位置に地図を寄せる"
+  },
+  "zoomCotrol": {
+    "zoomIn": "ズームイン",
+    "zoomReset": "ズームをリセット",
+    "zoomOut": "ズームアウト"
+  },
+  "tool": {
+    "closeButtonTitle": "{{toolName}} ツールを閉じる",
+    "loadingError": {
+      "title": "{{toolName}} ツールを閉じる際にエラー発生",
+      "message": "このツールをサーバーから読み込む際にエラー発生。もう一度お試しください。"
+    }
+  },
+  "legend": {
+    "lat": "緯度",
+    "lon": "経度",
+    "zone": "ゾーン",
+    "e": "東",
+    "n": "北",
+    "elev": "標高"
+  },
+  "share": {
+    "shortLinkShortening": "Shortening...",
+    "printTitle": "印刷",
+    "printExplanation": "このマップを印刷できる状態で表示",
+    "printButton": "Print",
+    "printViewButton": "Show Print View",
+    "creatingPrintView": "Creating print view...",
+    "btnAdvanced": "詳細設定",
+    "embedTitle": "HTMLページへの埋め込みは下記のコードをお使いください:",
+    "shortenUsingService": "Shorten the share URL using a web service",
+    "btnCatalogShareText": "Share",
+    "btnStoryShareText": "Share",
+    "btnMapShareText": "Share / Print",
+    "btnCatalogShareTitle": "カタログを他の人と共有",
+    "btnStoryShareTitle": "ストーリーを他の人と共有",
+    "btnMapShareTitle": "共有 / 印刷"
+  },
+  "countDatasets": {
+    "btnText": "Start",
+    "enabledOnMap": "が表示されています",
+    "noMapDataEnabled": "データが表示されていません",
+    "datasetSingular": "個のデータセット",
+    "datasetPlural": "個のデータセット"
+  },
+  "toolsPanel": {
+    "btnText": "ツール",
+    "btnTitle": "高度なツールボックス"
+  },
+  "settingPanel": {
+    "viewerModeLabels": {
+      "CesiumTerrain": "3D地形",
+      "CesiumEllipsoid": "3D地形なし",
+      "Leaflet": "2D"
+    },
+    "qualityLabels": {
+      "maximumPerformance": "パフォーマンス最大、低品質",
+      "balancedPerformance": "パフォーマンスと品質の最適化",
+      "lowerPerformance": "最高品質、低パフォーマンス"
+    },
+    "btnTitle": "背景図の選択",
+    "btnText": "Map Settings",
+    "mapView": "マップビュー",
+    "baseMap": "ベースマップ",
+    "imageOptimisation": "画像の最適化",
+    "nativeResolutionHeader": "デバイスの解像度を適用",
+    "mapQuality": "ラスターデータの質:",
+    "qualityLabel": "質",
+    "performanceLabel": "パフォーマンス"
+  },
+  "helpPanel": {
+    "menuPaneTitle": "使い方",
+    "menuPaneBody": "<img src='/images/help.png' style='width: 100%;'>",
+    "btnText": "Help"
+  },
+  "helpMenu": {
+    "btnText": "Help",
+    "btnTitle": "使い方",
+    "done": "DONE",
+    "next": "NEXT"
+  },
+  "sui": {
+    "showWorkbench": "Show Workbench",
+    "hideWorkbench": "ワークベンチを非表示"
+  },
+  "featureInfo": {
+    "noDataAvailable": "この場所には何も読み込まれていません。",
+    "panelHeading": "属性情報",
+    "btnCloseFeature": "閉じる",
+    "noInfoAvailable": "情報はありません。"
+  },
+  "story": {
+    "panelTitle": "ストーリーエディタ",
+    "panelBody": "地図を使ってストーリを作成し、共有することができます。",
+    "gettingStarted": "開始する",
+    "gettingStartedTitle": "開始する",
+    "badgeBarLabel": "シーン",
+    "share": "共有",
+    "shareTitle": "ストーリーを共有",
+    "viewStory": "見る",
+    "view": "見る",
+    "editStory": "編集",
+    "edit": "編集",
+    "recaptureStory": "再キャプチャ",
+    "recapture": "再キャプチャ",
+    "deleteStory": "削除",
+    "delete": "削除",
+    "untitledScene": "タイトルなしのシーン",
+    "doesNotExist": "ストーリーがありません",
+    "message": "<2>ストーリーエディタです</2><1>地図を使ってストーリを作成し、共有することができます。<1><0><0></0>開始する </0></1></1>",
+    "removeAllStories": "すべて削除",
+    "removeAllStoriesDialog": "シーン名：{{ count }} を本当に削除しますか？",
+    "removeAllStoriesDialog_plural": "シーン名：{{ count }} を本当に削除しますか？",
+    "removeStoryDialog": "'<1>{{storyName}}</1>' を本当に削除しますか？",
+    "preview": "ストーリーをプレビュー",
+    "play": "再生",
+    "captureSceneTitle": "現在のシーンをキャプチャ",
+    "captureScene": "シーンをキャプチャ",
+    "editor": {
+      "placeholder": "タイトルをここに入れてください",
+      "cancelBtn": "キャンセル",
+      "cancelEditing": "キャンセル",
+      "saveBtn": "保存",
+      "saveStory": "保存"
+    },
+    "locationBtn": "シーンの中心に移動",
+    "exitBtn": "ストーリーを終了",
+    "previousBtn": "一つ前のシーンに戻る",
+    "untitled": "タイトルなしのシーン",
+    "navBtn": "ストーリー {{title}} に進む",
+    "nextBtn": "次のシーンに進む",
+    "navBtnMobile": "ストーリー {{title}} に進む",
+    "promptHtml1": "<0>ここをクリックしていつでもストーリを見たり作成することができます。</0>",
+    "promptHtml2": "<0><0>はじめに</0><1>データストーリー</1><2>地図からインタラクティブなストーリーを作成して共有できます。</2></0>",
+    "story": "Story",
+    "storyBtnTitle": "ストーリーの設定",
+    "dismissText": "了解しました。ありがとうございます!",
+    "mobileViewStory": "ストーリーを見る {{storiesLength}}",
+    "storyEditor": "ストーリーエディタ",
+    "hideStoryPanel": "ストーリービルダを隠す"
+  },
+  "search": {
+    "resultsLabel": "検索結果",
+    "done": "終了",
+    "data": "データについて",
+    "searchInDataCatalog": "データカタログで <1>'{{locationSearchText}}'</1> を検索",
+    "search": "データカタログで '{{searchText}}' を検索",
+    "viewLess": "表示件数を減らす",
+    "viewMore": "表示件数を増やす",
+    "placeholder": "場所を検索",
+    "searchCatalogue": "カタログを検索する"
+  },
+  "preview": {
+    "doesNotContainGeospatialData": "This file does not contain geospatial data.",
+    "selectToPreview": "<0>データセットを選択してください（プレビューが表示されます） </0><1>- OR -</1><2>マップを開く</2>",
+    "loading": "プレビュー読み込み中...",
+    "preview": "{{appName}} プレビュー",
+    "noPreviewAvailable": "プレビューが利用できません",
+    "dataPreviewLoading": "プレビュー読み込み中...",
+    "dataPreview": "データプレビュー",
+    "dataPreviewError": "データプレビューのエラー",
+    "removeFromMap": "マップから削除",
+    "addToMap": "マップに追加",
+    "mayBeExperiencingIssues": "このデータセットには問題がある可能性があります"
+  },
+  "description": {
+    "name": " ",
+    "dataLocal": "This file only exists in your browser. To share it, you must load it onto a public web server.",
+    "dataNotLocal": "データの詳細はデータ提供者に確認してください（データ利用上の制限も含む）"
+  },
+  "workbench": {
+    "colorScaleRangeTitle": "カラーレンジのスケールが間違っています",
+    "colorScaleRangeMin": "最小値は数値であるべきです",
+    "colorScaleRangeMax": "最大値は数値であるべきです",
+    "colorScaleRangeMinSmallerThanMax": "カラーレンジの最小値は最大値よりも小さくしてください",
+    "colorScaleRange": "カラースケールのレンジ",
+    "rangeMax": "最大値:",
+    "rangeMin": "最小値:",
+    "colorScaleUpdateRange": "カラーレンジを更新",
+    "displayPercent": "合計値に対するパーセント表示にする",
+    "opacity": "透過度: {{opacity}} %",
+    "zoomToTitle": "データの範囲にズーム",
+    "zoomTo": "データ視点移動",
+    "openFeatureTitle": "データ範囲にズーム",
+    "openFeature": "ズーム",
+    "previewItemTitle": "このデータについて",
+    "showMoreActionsTitle": "もっと表示",
+    "previewItem": "データについて",
+    "splitItemTitle": "複製して分割表示",
+    "splitItem": "比較",
+    "diffImageTitle": "2時期の差を表示",
+    "diffImage": "差分",
+    "exportDataTitle": "マップデータをエクスポート",
+    "exportData": "エクスポート",
+    "removeFromMapTitle": "データを削除",
+    "removeFromMap": "削除",
+    "label": "Data Sets",
+    "removeAll": "すべて削除",
+    "collapseAll": "全て折りたたむ",
+    "expandAll": "全て展開",
+    "toggleVisibility": "データの表示/非表示",
+    "addItemErrorTitle": "カタログのアイテムをワークベンチに追加できませんでした",
+    "addItemErrorMessage": "カタログのアイテム追加の際にエラーが発生しました",
+    "dimensionsSelector": {
+      "undefinedLabel": "未指定"
+    },
+    "searchItem": "Search",
+    "searchItemTitle": "Search"
+  },
+  "clipboard": {
+    "success": "クリップボードにコピーしました",
+    "unsuccessful": "コピーに失敗しました",
+    "shareURL": "URLで共有",
+    "shareExplanation": "このURLを使えばだれでもこのマップにアクセスできます。",
+    "copy": "Copy"
+  },
+  "dragDrop": {
+    "text": "<0>ドラッグ&ドロップ</0><1>してあなたのデータをマップに表示<1>",
+    "not": "<0>bbbb</0>"
+  },
+  "emptyWorkbenchMessage": "<0><0>ワークベンチは空です</0><1><strong>Click '$t(addData.addDataBtnText)' above to </strong></1><2><0>Browse the Data Catalogue</0><1>Load your own data onto the map</1></2><3><0></0><strong>TIP.</strong><2>All your active data sets will be listed here</2></3></0>",
+  "emptyWorkbench": {
+    "emptyArea": "ワークベンチは空です"
+  },
+  "dataCatalog": {
+    "groupRemove": "グループを削除",
+    "groupEmpty": "このグループは空です"
+  },
+  "catalogItem": {
+    "privateIndicatorTitle": "プライベートデータセット",
+    "loading": "読み込み中...",
+    "remove": "削除",
+    "add": "追加",
+    "trash": "カタログから削除",
+    "removeFromMap": "マップから削除"
+  },
+  "chart": {
+    "sectionLabel": "Charts",
+    "closePanel": "Close Panel",
+    "expand": "Expand",
+    "download": "Download"
+  },
+  "terriaViewer": {
+    "slowWebGLAvailableTitle": "WebGLのパフォーマンスが不足しています"
+  },
+  "gettingstarted": {
+    "title": "マップを使ってみる",
+    "markdownText": "## マップを使ってみる\n\n上の動画では、空間データや地図を扱うのが初めての方が、データを追加したり地図上に表現するために必要な、基本的な機能について紹介しています。\n\n動画を見る時間がない方は、次の手順をお試しください。\n\n1. 'Add Data' から使用可能なデータを表示して、マップに追加してみましょう。\n2. 画面の左側に現れるボタンで表示/非表示ボタンを切り替えてみましょう。\n3. マップ上でデータをクリックして、より詳細な情報や元データについての情報を見てみましょう。\n4. Map Settingsボタンをクリックして、背景図を変更してみましょう。\n5. 画面右手のズームや回転ボタンを使って、視点を変化させてみましょう。",
+    "videoUrl": "https://www.youtube.com/embed/pY2dM-eG5mA",
+    "placeholderImage": "https://img.youtube.com/vi/pY2dM-eG5mA/maxresdefault.jpg"
+  },
+  "welcomeMessage": {
+    "title": "ようこそ",
+    "welcomeMessage": " ",
+    "tourBtnText": "ツアーに参加",
+    "helpBtnText": "ヘルプを見る",
+    "exploreDataBtnText": "マップのデータを見る",
+    "dismissText": "閉じて今後は表示しない"
+  },
+  "stepbystepguide": {
+    "title": "ステップバイステップガイド",
+    "markdownText": "## ステップバイステップガイド\n\nガイドに従って基本的な操作をしてみましょう。",
+    "gettingstarted": {
+      "title": "Getting started with the map",
+      "step1": {
+        "markdownDescription": "検索は画面左上の「場所を検索」から始めます.",
+        "title": "興味のある場所を名前から検索してみましょう"
+      },
+      "step2": {
+        "markdownDescription": "いつでもデータの一覧を見ることができます",
+        "title": " \"Add Data\" ボタンから利用可能なデータの一覧を確認しましょう"
+      },
+      "step3": {
+        "markdownDescription": "見たいデータを探します",
+        "title": "見たいデータを一覧から探すか、検索してみましょう"
+      },
+      "step4": {
+        "title": "マップにデータを追加するには + マークをクリックするか、プレビューウィンドウの \"Add to map\" ボタンを押してください",
+        "markdownDescription": ""
+      },
+      "step5": {
+        "title": "画面左側に現れる表示/非表示ボタンや透過度の設定をしてみましょう"
+      },
+      "step6": {
+        "title": "マップ上でデータをクリックすると属性パネルを表示されます。詳細な属性情報などを確認してみましょう。"
+      },
+      "step7": {
+        "title": "データを見やすくするために\"Map Settings\" で背景図を変更してみましょう"
+      },
+      "step8": {
+        "title": "画面右手のズームや回転ボタンを使って、視点を変化させてみましょう"
+      }
+    },
+    "satelliteimagery": {
+      "title": "衛星画像を追加",
+      "footnote": "注意: 衛星画像は読み込みに少し時間がかかります。表示されない場合は少しズームアウトしてみてください。",
+      "step1": {
+        "title": "衛星画像を見たい場所を検索",
+        "markdownDescription": "- 「場所を検索」を使うか、地図を移動してみたい場所を探してください。"
+      },
+      "step2": {
+        "title": "衛星画像をマップに追加",
+        "markdownDescription": "- \"Add Data\" ボタンを使ってカタログを開きます。\n- 衛星画像のオプションを選択: Landsat か Sentinel, あるいは日別画像か合成画像。 画像の解像度が10mか25mか、あるいは1日の画像か16日分の合成、あるいは年平均の画像かによって選択します。\n - \"Add to the map\" をクリックすれば衛星画像が表示されます。"
+      },
+      "step3": {
+        "title": "衛星画像の絞り込み",
+        "markdownDescription": "- 場所で絞り込むことで見たい衛星画像を絞り込みます。\n - 衛星は地球を毎日数回周回しています。同じ地点の画像は、およそ2週間に1枚あることが期待できます。\n - まだ対象地を選んでいない場合は、地図上でズームインして場所を決めてください。そうすれば画面左側に表示されるフィルターが青色で適用されるはずです。"
+      },
+      "step4": {
+        "title": "日時の指定",
+        "markdownDescription": "- 日付ピッカーを使って日時を指定してください。 矢印（戻る）を使うと年もさかのぼることができます。\n - もし画像が雲で見えにくい場合は別の日を選んでみてください。日付ピッカーの横の矢印で前日、翌日を簡単に選ぶことができます。"
+      }
+    },
+    "comparetimeseries": {
+      "title": "異なる日時の画像を比較",
+      "footnote": "重要: 2画面モードを使えば衛星画像以外のタイムシリーズデータの比較が可能です。",
+      "step1": {
+        "title": "タイムシリーズデータセットをマップに追加",
+        "markdownDescription": "- 数十年さかのぼって画像がある衛星画像はタイムシリーズデータの良い例です。\n- 興味のある場所を選択してその場所で取得可能な画像を絞り込んでください。\n-　画像の追加方法については衛星画像の追加に関するガイドをご覧ください。"
+      },
+      "step2": {
+        "title": "日時を指定",
+        "markdownDescription": "- 画面左側のワークベンチで日付を選択して日付ピッカーを開いてください。\n- 年月日を選択してください。矢印（戻る）を使うことで何世紀も前までさかのぼることができます。\n- 選択可能な日付は青色で表示されます。"
+      },
+      "step3": {
+        "title": "異なる日時の同じ場所を比較",
+        "markdownDescription": "- ワークベンチの3つのドットのドロップダウンメニューから'Compare'をクリックすると2画面表示モードに切り替わります。\n- ワークベンチには現在のデータセットの複製が表示されます。\n- 2画面の左側と右側に表示したいデータをそれぞれ選択します。\n- 2画面の中に表示されている白いボタンをスライドさせてふたつの画像を比較します。"
+      },
+      "step4": {
+        "title": "2画面表示モードの終了",
+        "markdownDescription": "- 2画面表示モードは、ワークベンチの2画面表示モードタイトルにある 'x' を押すことで終了します。\n- 複製したデータセットはワークベンチの3つのドットのドロップダウンメニューから削除します。"
+      }
+    }
+  },
+  "helpShading":{
+    "title": "日影機能について",
+    "markdownText": "## 日影表示機能について\n\nPLATEAU VIEWでは建物モデルなどが見やすいように、デフォルトでは日影の効果を「なし」に設定しています。\n日影の効果をONにするための手順は以下の通りです。\n\n1. 建物モデルをVIEWに追加した時に、左側の一覧に表示される「影」というメニューのプルダウンから「投影のみ」、「受光のみ」、「投影と受光」のいずれかを選択します。\n<img src='https://s3.ap-northeast-1.amazonaws.com/3dimension.jp/images/shade_control.png' alt='日影表示機能説明' width='80%'>\n\n\n2. この効果と合わせて、マップ右上の「Map Settings」の中にある「タイムライン」の「常に表示」にチェックを入れると画面下部に時間をコントロールするスケールが表示されます（③）。\n初期状態では、現在時刻で日影が表示されます。左側の再生ボタンを押すことで時間を進めることができます。\nまた、つまみを動かせば任意の時間で日影を表示することもできます。\n\nPLATEAU VIEWではSimonら（1994）の手法で推定された太陽の位置を用いて日影を計算し、表現しています。タイムバーが出ていないときは、地図が見やすいように仮想の光源から光を当てて表示しています。\n\nSimon, J., Bretagnon, P., Chapront, J., & Chapront-Touze, M. (1994). Numerical expressions for precession formulae and mean elements for the Moon and the planets. Astronomy and Astrophysics (Berlin. Print), 282(2), 663–683."
+  },
+  "helpClippingbox": {
+    "title": "クリップ機能",
+    "markdownText": "## クリップ機能について\n\nこの動画では、3Dモデルの断面を表示するための、クリップボックスの使い方を紹介しています。\n\n### （クリップ機能の使い方）\n1. クリップ機能が使えるデータ（建物モデルやBIMデータ）を表示すると、左側の一覧の中に「クリップ機能」というチェックボックスが表示されます。\n2. チェックボックスにチェックを入れると、機能を有効にできます。\n3. 機能を有効にすると、画面中央に立方体が表示されます。\n4. この立方体を移動して、3Dモデルに重ねると、立方体の内側、あるいは外側のみ3Dモデルを表示することができます。内側、外側の切り替えにはプルダウンの「ボックス内をクリップ」、「ボックス外をクリップ」を選択します。\n5. 立方体のサイズや形は頂点の赤いポイント、あるいは各面の中央に配置された青いポイントを使って変更することができます。\n6. 「クリップボックスを表示」のチェックボックスはデフォルトではチェックが入っていますが、このチェックを外すと、最初に表示された立方体を非表示にすることができます。立方体は表示されませんが、クリップ機能は有効です。\n7. 「クリップボックスを地面にスナップ」のチェックボックスはデフォルトではチェックが入っていて、地下に潜らないようになっています。地下のオブジェクトに対してもクリップ機能を使いたい場合は、このチェックを外してください。",
+    "videoUrl": "https://www.youtube.com/embed/HQ2lDxVnJ9A",
+    "placeholderImage": "https://img.youtube.com/vi/HQ2lDxVnJ9A/maxresdefault.jpg"
+  },  
+  "helpContentTerm1": {
+    "term": "データセット",
+    "aliases": [
+      "データ　セット",
+      "data sets",
+      "datasets"
+    ],
+    "content": "同じデータ構造を持ったデータ集。例えば\"2019年の東京の土地価格\" あるいは \"一日の最高・最低気温\""
+  },
+  "helpContentTerm2": {
+    "term": "タイムシリーズ",
+    "aliases": [
+      "タイム　シリーズ"
+    ],
+    "content": "時系列で集められたデータ。例えば、気温センサーのデータ、あるいは同じ場所の複数年代の衛星画像。"
+  },
+  "helpContentTerm3": {
+    "term": "ワークベンチ",
+    "content": "画面左側に表示される、あなたが追加したデータセットが表示されるパネル。"
+  },
+  "helpContentTerm4": {
+    "term": "4D",
+    "content": "時系列の値を持つ3Dデータ"
+  },
+  "helpContentTerm5": {
+    "term": "カタログ",
+    "aliases": [
+      "catalogue"
+    ],
+    "content": "マップに追加できるデータセットの一覧"
+  },
+  "helpContentTerm6": {
+    "term": "ベースマップ",
+    "aliases": [
+      "ベース　マップ",
+      "base map",
+      "basemaps"
+    ],
+    "content": "道路地図やBing等の背景画像"
+  },
+  "helpContentTerm7": {
+    "term": "ソースデータセット",
+    "content": "ワークベンチに追加されたデータセットのうち、計算に利用できるもの"
+  },
+  "helpContentTerm8": {
+    "term": "プレビュースタイル",
+    "content": "データセットがプレビューウィンドウに表示される時に適用されるスタイル。雲の無い画像の検索にはトゥルーカラーが適する。"
+  },
+  "models": {
+    "clippingBox": {
+        "groupName": "クリップボックス",
+        "clipModel": "クリップ機能",
+        "showClippingBox": "クリップボックスを表示",
+        "keepBoxAboveGround": "クリップボックスを地面にスナップ",
+        "clipDirection": {
+            "name": "クリップ方法の選択",
+            "options": {
+                "inside": "ボックス内をクリップ",
+                "outside": "ボックス外をクリップ"
+            }
+        }
+    }
+  }  
+}

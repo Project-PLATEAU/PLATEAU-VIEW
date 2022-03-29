@@ -183,7 +183,8 @@ gulp.task('make-package', function(done) {
 
     // if we are on OSX make sure to use gtar for compatibility with Linux
     // otherwise we see lots of error message when extracting with GNU tar
-    var tar = /^darwin/.test(process.platform) ? 'gtar' : 'tar';
+    // var tar = /^darwin/.test(process.platform) ? 'gtar' : 'tar';
+    var tar = 'tar';    
 
     var tarResult = spawnSync(tar, [
         'czf',
@@ -335,13 +336,19 @@ function checkForDuplicateCesium() {
                     'Please verify that node_modules/terriajs-cesium is the correct version and\n' +
                     '  rm -rf node_modules/terriajs/node_modules/terriajs-cesium\n' +
                     'Also consider running:\n' +
-                    '  npm run gulp sync-terriajs-dependencies\n' +
+                    '  yarn gulp sync-terriajs-dependencies\n' +
                     'to prevent this problem from recurring the next time you `npm install`.');
         throw new PluginError('checkForDuplicateCesium', 'You have two copies of Cesium.', { showStack: false });
     }
 }
 
-gulp.task('build', gulp.series('render-datasource-templates', 'copy-terriajs-assets', 'build-app'));
-gulp.task('release', gulp.series('render-datasource-templates', 'copy-terriajs-assets', 'release-app', 'make-editor-schema'));
-gulp.task('watch', gulp.parallel('watch-datasource-templates', 'watch-terriajs-assets', 'watch-app'));
+gulp.task('copy-module-patch', function() {
+    var destPath = path.resolve(__dirname, 'node_modules', 'terriajs-cesium', 'Source');
+    return gulp.src('./Cesium.d.ts')
+        .pipe(gulp.dest(destPath));
+});
+
+gulp.task('build', gulp.series('render-datasource-templates', 'copy-terriajs-assets', 'copy-module-patch', 'build-app'));
+gulp.task('release', gulp.series('render-datasource-templates', 'copy-terriajs-assets', 'copy-module-patch', 'release-app', 'make-editor-schema'));
+gulp.task('watch', gulp.parallel('watch-datasource-templates', 'watch-terriajs-assets', 'copy-module-patch', 'watch-app'));
 gulp.task('default', gulp.series('lint', 'build'));

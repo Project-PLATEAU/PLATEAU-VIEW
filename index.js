@@ -4,13 +4,12 @@ var terriaOptions = {
     baseUrl: 'build/TerriaJS'
 };
 
-import { runInAction } from "mobx";
+import { runInAction, autorun } from "mobx";
 
 // checkBrowserCompatibility('ui');
 import ConsoleAnalytics from 'terriajs/lib/Core/ConsoleAnalytics';
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
-import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
 // import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
 // import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
@@ -18,13 +17,20 @@ import Terria from 'terriajs/lib/Models/Terria';
 import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
-import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchProvider';
+import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/SearchProviders/BingMapsSearchProvider';
 // import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 // import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
-import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
+import registerCatalogMembers from 'terriajs/lib/Models/Catalog/registerCatalogMembers';
 import defined from 'terriajs-cesium/Source/Core/defined';
+
+import ScreenSpaceEventType from "terriajs-cesium/Source/Core/ScreenSpaceEventType";
+import {setLight, switchTerrain, getVrInfoFromCamera, determineCatalogItem} from 'terriajs/lib/ViewModels/cesiumFunctions';
+import {getVrUrlRoot} from 'terriajs/lib/ViewModels/workbenchFuncitons';
+
+
+let assetId;
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -72,11 +78,9 @@ module.exports = terria.start({
         terria: terria
     })
 }).catch(function(e) {
-    raiseErrorToUser(terria, e);
+  terria.raiseErrorToUser(e);
 }).finally(function() {
-    terria.loadInitSources().catch(e => {
-        raiseErrorToUser(terria, e);
-    });
+    terria.loadInitSources().then(result => result.raiseError(terria));
     try {
         viewState.searchState.locationSearchProviders = [
             new BingMapsSearchProviderViewModel({
@@ -109,7 +113,10 @@ module.exports = terria.start({
                     title: (globalDisclaimer.title !== undefined) ? globalDisclaimer.title : 'Warning',
                     confirmText: (globalDisclaimer.buttonTitle || "Ok"),
                     denyText: (globalDisclaimer.denyText || "Cancel"),
-                    denyAction: function() { 
+                    // denyAction: globalDisclaimer.afterDenyLocation ? function() {
+                    //     window.location = globalDisclaimer.afterDenyLocation;
+                    // } : undefined,
+                    denyAction: function() {
                         window.location = globalDisclaimer.afterDenyLocation || "https://terria.io/";
                     },
                     width: 600,
@@ -122,6 +129,72 @@ module.exports = terria.start({
                     viewState.disclaimerVisible = true;
                 });
             }
+        }
+
+        autorun(()=>{
+            if (terria.currentViewer.type === "Cesium"){
+                // 太陽固定
+                setLight(terria);
+
+                const camera = terria.currentViewer.scene.camera;
+                camera.moveEnd.addEventListener(()=>{
+                    // 位置によるアセットID変更
+                    assetId = switchTerrain(terria, assetId);
+
+                    // // 半径 n kmないのデータのみ表示（実験的機能）
+                    // runInAction(()=>{
+                    //     for (const disposer of disposers){
+                    //         disposer();
+                    //     }
+                    //     disposers = [];
+                    //     for (const item of terria.workbench.items){
+                    //         if (! item.customProperties || ! item.customProperties.filterByDistance){
+                    //             continue;
+                    //         }
+                    //         disposers.push(showFeaturesInRange(item, camera));
+                    //     }    
+                    // });                
+                });
+
+                // Panasonic VR マーカー
+                const inputHandler = terria.currentViewer.cesiumWidget.screenSpaceEventHandler;
+                const defaultHandler = inputHandler.getInputAction(ScreenSpaceEventType.LEFT_CLICK);
+
+                inputHandler.setInputAction(e => {
+                    defaultHandler(e);
+
+                    // const cameraView = terria.currentViewer.getCurrentCameraView();
+                    const vrInfo = getVrInfoFromCamera(terria.currentViewer.scene.camera);
+
+                    // TODO: This is bad. How can we do it better?
+                    setTimeout(()=>{
+                        for (const f of terria.pickedFeatures.features){
+                            const workbenchItem = determineCatalogItem(terria.workbench, f);
+                            let vrUrlRoot = getVrUrlRoot(workbenchItem);
+                            if (vrUrlRoot){
+                                vrUrlRoot = vrUrlRoot.replace(/"/g, "");
+                                const vrUrl = `${vrUrlRoot}?latitude=${vrInfo.lat}&longitude=${vrInfo.lng}&altitude=${vrInfo.height}&heading=${vrInfo.heading}&pitch=${vrInfo.pitch}&id=${f.id}`;
+                                
+                                window.open(vrUrl, "panasonic_vr");
+                                break;
+                            }
+                        }
+
+                    },100);
+                    
+                }, ScreenSpaceEventType.LEFT_CLICK);
+                
+
+            }
+        });
+
+        // Add font-imports
+        const fontImports = terria.configParameters.theme?.fontImports;
+        if (fontImports) {
+          const styleSheet = document.createElement("style");
+          styleSheet.type = "text/css";
+          styleSheet.innerText = fontImports;
+          document.head.appendChild(styleSheet);
         }
 
         render(terria, [], viewState);
