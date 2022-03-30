@@ -183,6 +183,7 @@ cd ../../
 ##### nodejs依存モジュールのインストール
 
 ```bash
+git config url."https://github.com/".insteadOf git://github.com/
 yarn
 ```
 
