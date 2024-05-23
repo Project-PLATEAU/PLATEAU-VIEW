@@ -26,11 +26,9 @@ import registerCatalogMembers from 'terriajs/lib/Models/Catalog/registerCatalogM
 import defined from 'terriajs-cesium/Source/Core/defined';
 
 import ScreenSpaceEventType from "terriajs-cesium/Source/Core/ScreenSpaceEventType";
-import {setLight, switchTerrain, getVrInfoFromCamera, determineCatalogItem} from 'terriajs/lib/ViewModels/cesiumFunctions';
+import {setLight, getVrInfoFromCamera, determineCatalogItem} from 'terriajs/lib/ViewModels/cesiumFunctions';
 import {getVrUrlRoot} from 'terriajs/lib/ViewModels/workbenchFuncitons';
 
-
-let assetId;
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -136,26 +134,6 @@ module.exports = terria.start({
                 // 太陽固定
                 setLight(terria);
 
-                const camera = terria.currentViewer.scene.camera;
-                camera.moveEnd.addEventListener(()=>{
-                    // 位置によるアセットID変更
-                    assetId = switchTerrain(terria, assetId);
-
-                    // // 半径 n kmないのデータのみ表示（実験的機能）
-                    // runInAction(()=>{
-                    //     for (const disposer of disposers){
-                    //         disposer();
-                    //     }
-                    //     disposers = [];
-                    //     for (const item of terria.workbench.items){
-                    //         if (! item.customProperties || ! item.customProperties.filterByDistance){
-                    //             continue;
-                    //         }
-                    //         disposers.push(showFeaturesInRange(item, camera));
-                    //     }    
-                    // });                
-                });
-
                 // Panasonic VR マーカー
                 const inputHandler = terria.currentViewer.cesiumWidget.screenSpaceEventHandler;
                 const defaultHandler = inputHandler.getInputAction(ScreenSpaceEventType.LEFT_CLICK);
@@ -174,17 +152,12 @@ module.exports = terria.start({
                             if (vrUrlRoot){
                                 vrUrlRoot = vrUrlRoot.replace(/"/g, "");
                                 const vrUrl = `${vrUrlRoot}?latitude=${vrInfo.lat}&longitude=${vrInfo.lng}&altitude=${vrInfo.height}&heading=${vrInfo.heading}&pitch=${vrInfo.pitch}&id=${f.id}`;
-                                
                                 window.open(vrUrl, "panasonic_vr");
                                 break;
                             }
                         }
-
                     },100);
-                    
                 }, ScreenSpaceEventType.LEFT_CLICK);
-                
-
             }
         });
 
